@@ -1,8 +1,16 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Primzahlgenerator pg = new Primzahlgenerator(1000);
-        System.out.println(pg.generiere());
-        System.out.println(pg.generiere());
-        System.out.println(pg.generiere());
+        Scanner eingabe = new Scanner(System.in);
+        System.out.print("Bitte geben Sie den Startwert ein: ");
+        int startwert = eingabe.nextInt();
+        System.out.print("Bitte geben Sie die Anzahl ein: ");
+        int anzahl = eingabe.nextInt();
+
+        Primzahlgenerator pg = new Primzahlgenerator(startwert);
+        for (int i=0; i<anzahl; i++) {
+            System.out.println( pg.generiere() );
+        }
     }
 }
